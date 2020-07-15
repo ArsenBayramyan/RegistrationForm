@@ -1,0 +1,59 @@
+﻿@model RegistrationForm.Models.StudentCreateModel
+
+@{
+    ViewData["Title"] = "Գրանցվել դասընթացի համար";
+
+}
+
+<div class="main">
+
+    <!-- Sign up form -->
+    <section class="signup" style="margin-bottom:45px">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Գրանցվել</h2>
+                    <h5>Անձնական տվյալներ</h5>
+                    <br />
+                    <form class="register-form" id="register-form" asp-action="SignUp" asp-controller="Home">
+                        <div class="form-group">
+                            <label asp-for="FullName"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input asp-for="FullName" onblur="checkField('FullName','firstNameEmpty','firstNameIncorrect')" placeholder="Անուն, Ազգանուն*" />
+                            <span style="color:red; display:none" id="firstNameEmpty">Անուն, Ազգանուն դաշտը պարտադիր է</span>
+                            <span style="display:none;color:red" id="firstNameIncorrect">Սխալ անուն, ազգանուն</span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email"><i class="zmdi zmdi-email"></i></label>
+                            <input asp-for="Email" onblur="validateEmail()" type="email" placeholder="E-mail*" />
+                            <span style="color:red; display:none" id="emailEmpty">E-mail դաշտը պարտադիր է</span>
+                            <span style="color:red; display:none" id="emailIncorrect">Սխալ E-mail</span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Age"><i class="zmdi zmdi-calendar-alt"></i></label>
+                            <input asp-for="Age" onblur="validateAge()" placeholder="Տարիք*" />
+                            <span style="color:red; display:none" id="ageEmpty">Տարիք դաշտը պարտադիր է</span>
+                            <span style="display:none;color:red" id="ageIncorrect">Ուսանողի տարիքը պետք է մեծ լինի 15-ից և փոքր՝35-ից </span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone"><i class="zmdi zmdi-phone"></i></label>
+                            <input asp-for="Phone" onblur="validatePhone()" placeholder="Հեռախոսահամար*" />
+                            <span style="color:red; display:none" id="phoneEmpty">Հեռախոսահամար դաշտը պարտադիր է</span>
+                            <span style="color:red; display:none" id="phoneIncorrect">Սխալ հեռախոսահամար</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="form-submit " disabled id="submitBtn" />
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="~/images/signup-image.jpg" alt="sing up image"></figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</div>
+<@*/body>
+</html>*@
